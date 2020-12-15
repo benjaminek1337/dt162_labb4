@@ -1,0 +1,29 @@
+table {
+    table-layout: auto;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  thead td {
+    font-weight: bold;
+  }
+  
+  tbody td {
+    vertical-align: top;
+  }
+  
+  td {
+    padding: 2px 10px;
+  }
+  
+  .td-course-settings{
+    text-align: right;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #ccc;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #fff;
+  }

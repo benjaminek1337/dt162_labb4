@@ -1,0 +1,9 @@
+<div *ngIf="myCourse && foundCourse">
+    <h2>{{ myCourse.courseCode }} - {{ myCourse.name }}</h2>
+    <p>Ämnestillhörighet: {{ myCourse.subjectCode }}, {{ myCourse.subject }}</p>
+    <p>Institutionstillhörighet: {{ myCourse.institutionCode }}</p>
+    <p>Har jag klarat den? {{ getCompletedStatus() }}</p>
+    <p>Nivå: {{ myCourse.level }}</p>
+    <p>Poäng: {{ myCourse.points }}</p>
+</div>
+<h1 *ngIf="foundCourse == false">404 - Kursen finns inte. Haha!</h1>

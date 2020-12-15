@@ -1,0 +1,23 @@
+<section class="courses" *ngIf="courses">
+    <h1>Administrera mina kurser</h1>
+    <app-my-course-add-form (success)="getMyCourses()"></app-my-course-add-form>
+    <table>
+        <thead>
+            <tr>
+                <td>Kurskod</td>
+                <td class="course-name">Namn</td>
+                <td>Avklarad</td>
+                <td>Ta bort kurs</td>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr data-ng-repeat="course in courses | filter:filterQuery | orderBy: 'courseCode'"> -->
+            <tr *ngFor="let course of courses; let i = index">
+                <td>{{ course.courseCode }}</td>
+                <td>{{ course.name }}</td>
+                <td><input type="checkbox" [checked]="course.completed" (change)="setCompletedStatus(course)"></td>
+                <td class="td-remove-course" (click)="deleteCourse(course.courseCode)">Ta bort</td>
+            </tr>
+        </tbody>
+    </table>
+</section>

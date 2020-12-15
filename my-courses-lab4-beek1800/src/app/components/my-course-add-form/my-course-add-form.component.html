@@ -1,0 +1,10 @@
+<h4>Lägg till kurs:</h4>
+<form #courseForm="ngForm" (ngSubmit)="addCourse(courseForm)">
+    <input type="text" name="courseCode" placeholder="Kurskod..." ngModel required>
+    <br>
+    <label for="done">Avklarad?</label>
+    <input type="checkbox" name="done" ngModel required>
+    <br>
+    <input type="submit" value="Lägg till kurs">
+</form>
+<hr>

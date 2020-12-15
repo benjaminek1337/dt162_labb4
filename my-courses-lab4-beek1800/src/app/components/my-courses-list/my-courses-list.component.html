@@ -1,0 +1,25 @@
+<section class="courses" *ngIf="courses">
+    <table>
+        <thead>
+            <tr>
+                <td>Kurskod</td>
+                <td class="course-name">Namn</td>
+                <td>Avklarad</td>
+                <td>hp</td>
+                <td>Institution</td>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr data-ng-repeat="course in courses | filter:filterQuery | orderBy: 'courseCode'"> -->
+            <tr *ngFor="let course of courses; let i = index">
+                <td>{{ course.courseCode }}</td>
+                <td id="courseNameRow"><a routerLink="/my-courses/{{ course.courseCode }}">{{ course.name }}</a>
+                    <span id="subjectNameRow" *ngIf="course.subject">Ämne: {{ course.subject }}</span>
+                </td>
+                <td>{{ getCompletedStatus(course) }}</td>
+                <td>{{ course.points }}</td>
+                <td class="center">{{ course.institutionCode }}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
