@@ -1,1 +1,7 @@
-<p>subject-detail works!</p>
+<div *ngIf="subject && foundSubject">
+    <h2>Info om ämne: {{ subject.subject }} ({{ subject.subjectCode }})</h2>
+    <p>{{ subject.preamble }}</p>
+    <p>{{ subject.bodyText }}</p>
+    <p>Språk: {{ subject.language }}</p>
+</div>
+<h1 *ngIf="foundSubject == false">404 - Ämnet finns inte. Haha!</h1>

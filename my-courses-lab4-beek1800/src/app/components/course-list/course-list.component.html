@@ -13,7 +13,7 @@
             <tr *ngFor="let course of courses; let i = index">
                 <td>{{ course.courseCode }}</td>
                 <td id="courseNameRow"><a routerLink="/courses/{{ course.courseCode }}">{{ course.name }}</a>
-                    <span id="subjectNameRow" *ngIf="course.subject">Ämne: {{ course.subject }}</span>
+                    <span id="subjectNameRow" *ngIf="course.subject"><a routerLink="/subjects/{{ course.subjectCode }}"> Ämne: {{ course.subject }}</a></span>
                 </td>
                 <td>{{ course.points }}</td>
                 <td class="center">{{ course.institutionCode }}</td>
